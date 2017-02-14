@@ -4,10 +4,18 @@ package com.pluralsight.CalcEngine;
  * Created by Jscincotta on 2/14/17.
  */
 public class MathEquation {
-    public double leftVal;
-    public double rightVal;
-    public char opCode;
-    public double result;
+    private double leftVal;
+    private double rightVal;
+    private char opCode;
+    private double result;
+
+    public double getLeftVal() {return leftVal;}
+    public void setLeftVal(double leftVal) {this.leftVal = leftVal;}
+    public double getRightVal() {return rightVal;}
+    public void setRightVal(double rightVal) {this.rightVal = rightVal;}
+    public char getopCode() {return opCode;}
+    public void setOpCode(char opCode) {this.opCode = opCode;}
+    public double getResult() {return result;}
 
     public void execute(){
         switch(opCode){
@@ -20,7 +28,7 @@ public class MathEquation {
             case 'd':
                 result = rightVal != 0.0d ? leftVal / rightVal : 0.0d;
                 break;
-            case'm':
+            case 'm':
                 result = leftVal * rightVal;
                 break;
             default:
