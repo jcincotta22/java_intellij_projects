@@ -1,4 +1,6 @@
-package com.pluralsight.CalcEngine;
+package com.pluralsight.calcengine;
+
+import com.pluralsight.calcengine.CalculateBase;
 
 /**
  * Created by Jscincotta on 2/14/17.
