@@ -2,12 +2,15 @@ package com.pluralsight.myapp;
 
 import com.pluralsight.calcengine.CalculateBase;
 import com.pluralsight.calcengine.CalculateHelper;
+import com.pluralsight.calcengine.DynamicHelper;
 import com.pluralsight.calcengine.InvalidStatementException;
 import com.pluralsight.calcengine.MathEquation;
 import com.pluralsight.calcengine.Adder;
+import com.pluralsight.calcengine.MathProcessing;
 import com.pluralsight.calcengine.Subtracter;
 import com.pluralsight.calcengine.Multiplier;
 import com.pluralsight.calcengine.Divider;
+import com.pluralsight.calcengine.PowerOf;
 
 
 public class Main {
@@ -16,7 +19,26 @@ public class Main {
 
 //        useMathEquation();
 //        useCalculateBase();
+//        useCalculateHelper();
+        String[] statements = {
+                "add 25.0 92.0",
+                "power 5.0 2.0"
+        };
 
+        DynamicHelper helper = new DynamicHelper(new MathProcessing[] {
+                new Adder(),
+                new PowerOf()
+        });
+
+        for(String statement:statements) {
+            String output = helper.process(statement);
+            System.out.println(output);
+        }
+
+
+    }
+
+    static void useCalculateHelper() {
         String[] statements = {
                 "add 1.0",
                 "add xx 25.0",
@@ -37,9 +59,7 @@ public class Main {
                 if(e.getCause() != null)
                     System.out.println("  Original exception: " + e.getCause().getMessage());
             }
-
         }
-
     }
 
     static void useMathEquation(){
