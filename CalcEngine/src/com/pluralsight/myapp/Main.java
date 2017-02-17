@@ -22,12 +22,14 @@ public class Main {
 //        useCalculateHelper();
         String[] statements = {
                 "add 25.0 92.0",
-                "power 5.0 2.0"
+                "power 5.0 2.0",
+                "subtract 300.0 100.0"
         };
 
         DynamicHelper helper = new DynamicHelper(new MathProcessing[] {
                 new Adder(),
-                new PowerOf()
+                new PowerOf(),
+                new Subtracter()
         });
 
         for(String statement:statements) {
