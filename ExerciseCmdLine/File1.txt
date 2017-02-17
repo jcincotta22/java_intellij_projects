@@ -1,0 +1,4 @@
+Hello World
+This is the Java platfor course
+Course assumes you've seen the Java Language course
+http://bit.ly/psjavalanguage
